@@ -25,14 +25,13 @@
     <li class="header">MAIN NAVIGATION</li>
     <li class="active treeview">
       <a href="#">
-        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+        <i class="fa fa-dashboard"></i> <span>บทสรุป</span>
         <span class="pull-right-container">
           <i class="fa fa-angle-left pull-right"></i>
         </span>
       </a>
       <ul class="treeview-menu">
-        <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-        <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+        <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> ยอดขาย</a></li>
       </ul>
     </li>
     <li class="treeview">
@@ -49,14 +48,6 @@
         <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
         <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
       </ul>
-    </li>
-    <li>
-      <a href="pages/widgets.html">
-        <i class="fa fa-th"></i> <span>Widgets</span>
-        <span class="pull-right-container">
-          <small class="label pull-right bg-green">new</small>
-        </span>
-      </a>
     </li>
     <li class="treeview">
       <a href="#">
@@ -92,15 +83,14 @@
     </li>
     <li class="treeview">
       <a href="#">
-        <i class="fa fa-edit"></i> <span>Forms</span>
+        <i class="fa fa-edit"></i> <span>สมาชิก</span>
         <span class="pull-right-container">
           <i class="fa fa-angle-left pull-right"></i>
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-        <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-        <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+        <li><a href="<?php echo base_url();?>/member/"><i class="fa fa-circle-o"></i> รายชื่อสมาชิก</a></li>
+        <li><a href="<?php echo base_url();?>/member/add"><i class="fa fa-circle-o"></i> เพิ่มสมาชิก</a></li>
       </ul>
     </li>
     <li class="treeview">
