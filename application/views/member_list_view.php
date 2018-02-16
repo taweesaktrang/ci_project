@@ -33,40 +33,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-	
+
 	   <style type="text/css">
-    html,body {   
-        padding: 0;   
-        margin: 0;   
-        width: 100%;   
-        height: 100%;             
-    }   
-    #overlay {   
-        position: absolute;  
-        top: 0px;   
-        left: 0px;  
-        background: #ccc;   
-        width: 100%;   
-        height: 100%;   
-        opacity: .75;   
-        filter: alpha(opacity=75);   
-        -moz-opacity: .75;  
-        z-index: 999;  
+    html,body {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+    #overlay {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background: #ccc;
+        width: 100%;
+        height: 100%;
+        opacity: .75;
+        filter: alpha(opacity=75);
+        -moz-opacity: .75;
+        z-index: 999;
         background: #fff url(http://localhost/ci_project/assets/AdminLTE/dist/img/loading.gif) 50% 50% no-repeat;
-    }   
+    }
     .main-contain{
-        position: absolute;  
-        top: 0px;   
-        left: 0px;  
-        width: 100%;   
-        height: 100%;   
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
         overflow: hidden;
     }
     </style>
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-<div id="overlay"></div>    
+<div id="overlay"></div>
 <div class="main-contain">
 <div class="wrapper">
 
@@ -127,6 +127,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="box-header">
               <h3 class="box-title">Data Table With Full Features</h3>
             </div>
+            <div class="box-body">
+              <a href="<?php echo base_url()?>member/add"><button class="btn btn-success" ><i class="glyphicon glyphicon-plus"></i> Add Member</button></a>
+            </div>
+
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
@@ -136,6 +140,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <th>ชื่อ-สกุล</th>
                   <th>แผนก</th>
                   <th>เงินเดือน</th>
+                  <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -145,6 +150,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <td><?php echo $row->member_name;?></td>
                   <td><?php echo $row->member_dep;?></td>
                   <td><?php echo $row->salary;?></td>
+                  <td>
+                    <button class="small-btn btn-warning" ><i class="glyphicon glyphicon-pencil"></i></button>
+                    <button class="small-btn btn-danger" ><i class="glyphicon glyphicon-remove"></i></button>
+                  </td>
                 </tr>
 				<?php } ?>
                 </tbody>
@@ -400,7 +409,7 @@ $(function(){
     $("#overlay").fadeOut();
     $(".main-contain").removeClass("main-contain");
 });
-</script>    
+</script>
 
 
 </body>

@@ -21,6 +21,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="<?php echo base_url();?>/assets/AdminLTE/dist/css/skins/_all-skins.min.css">
 
+  <link rel="stylesheet" href="<?php echo base_url();?>/assets/AdminLTE/bower_components/bootstrap-validator/vendor/bootstrap/css/bootstrap.css"/>
+  <link rel="stylesheet" href="<?php echo base_url();?>/assets/AdminLTE/bower_components/bootstrap-validator/dist/css/bootstrapValidator.css"/>
+
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -95,7 +99,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form class="form-horizontal" method="post" action="add_process">
+            <form id="defaultForm" class="form-horizontal" method="post" action="add_process">
               <div class="box-body">
                 <div class="form-group">
                   <label for="member_id" class="col-sm-2 control-label">รหัสสมาชิก</label>
@@ -359,5 +363,63 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="<?php echo base_url();?>/assets/AdminLTE/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url();?>/assets/AdminLTE/dist/js/demo.js"></script>
+
+<script type="text/javascript" src="<?php echo base_url();?>/assets/AdminLTE/bower_components/bootstrap-validator/vendor/jquery/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>/assets/AdminLTE/bower_components/bootstrap-validator/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>/assets/AdminLTE/bower_components/bootstrap-validator/dist/js/bootstrapValidator.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#defaultForm')
+        .bootstrapValidator({
+            message: 'This value is not valid',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                member_id: {
+                    message: 'The member_id is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'รหัสสมาชิกเป็นค่าว่างไม่ได้'
+                        },
+                        stringLength: {
+                            min: 10,
+                            max: 13,
+                            message: 'รหัสสมาชิกจะต้องเป็นตัวเลขมีความยาวตั้งแต่ 10-13 หลัก'
+                        },
+
+                        regexp: {
+                            regexp: /^[0-9]+$/,
+                            message: 'รหัสสมาชิกจะต้องเป็นตัวเลขเท่านั้น'
+                        }
+                    }
+                }
+
+            }
+        })
+        .on('success.form.bv', function(e) {
+            e.preventDefault();
+
+            // Get the form instance
+            var $form = $(e.target);
+
+            // Get the BootstrapValidator instance
+            var bv = $form.data('bootstrapValidator');
+
+            // Use Ajax to submit form data
+            $.post($form.attr('action'),
+            $form.serialize(),
+            function(result) {
+                console.log(result);
+            },
+            'json');
+            $form.reset();
+        });
+});
+</script>
+
 </body>
 </html>

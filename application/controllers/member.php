@@ -2,17 +2,19 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Member extends CI_Controller {
+	public function __construct(){
+ 		parent::__construct();
+ 		$this->load->helper('url');
+ 	}
 
-	public function index()
-	{
+	public function index(){
 		$this->load->model('member_model');
 		$data['query'] = $this->member_model->get_member();
 
 		$this->load->view('member_list_view',$data);
 	}
 
-	public function add()
-	{
+	public function add(){
 		$this->load->view('member_add_view');
 	}
 
@@ -23,19 +25,6 @@ class Member extends CI_Controller {
 
 		$data['query'] = $this->member_model->get_member();
 		$this->load->view('member_list_view',$data);
-			
-	}
 
-	public function edit(){
-		
 	}
-
-	public function del(){
-		
-	}
-
-	public function search(){
-		
-	}
-
 }
