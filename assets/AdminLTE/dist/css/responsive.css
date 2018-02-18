@@ -1,0 +1,49 @@
+@CHARSET "UTF-8";
+
+@media ( max-width : 768px) {
+	.project-header .project-name{
+		padding: 5px 0;
+		font-size: 20px;
+	}
+	
+	.project-header .project-name small{
+		font-size: 14px;
+	}
+}
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+@media ( min-width : 769px) {
+	#seatViewport ul li.grid {
+	  width: 49.2%;
+	  margin: 0;
+	  padding: 0;
+	/*   border: 1px solid #dddddd; */
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media ( min-width : 992px) {
+	#page-wrapper {
+		min-height: 652px;
+	}
+
+	#seatViewport ul li.grid {
+	  width: 49.6%;
+	  margin: 0;
+	  padding: 0;
+	/*   border: 1px solid #dddddd; */
+	}
+}
+
+@media ( min-width : 1900px) {
+	#page-wrapper {
+		min-height: 962px;
+	}
+
+	#seatViewport ul li.grid {
+	  width: 49.2%;
+	  margin: 0;
+	  padding: 0;
+	/*   border: 1px solid #dddddd; */
+	}
+}

@@ -136,11 +136,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>รหัสสมาชิก</th>
+                  <th width="15%">รหัสสมาชิก</th>
                   <th>ชื่อ-สกุล</th>
-                  <th>แผนก</th>
-                  <th>เงินเดือน</th>
-                  <th>Action</th>
+                  <th width="18%">แผนก</th>
+                  <th width="10%">เงินเดือน</th>
+                  <th width="15%">Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -151,8 +151,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <td><?php echo $row->member_dep;?></td>
                   <td><?php echo $row->salary;?></td>
                   <td>
-                    <button class="small-btn btn-warning" ><i class="glyphicon glyphicon-pencil"></i></button>
-                    <button class="small-btn btn-danger" ><i class="glyphicon glyphicon-remove"></i></button>
+			
+
+                    <button class="btn  btn-default btn-sm" ><i class="glyphicon glyphicon-pencil"></i></button>
+                    <button class="btn  btn-warning btn-sm" ><i class="glyphicon glyphicon glyphicon-trash"></i></button>
                   </td>
                 </tr>
 				<?php } ?>

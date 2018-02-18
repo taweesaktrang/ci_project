@@ -10,92 +10,107 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <title>AdminLTE 2 | Log in</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="<?php echo base_url();?>/assets/AdminLTE/bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?php echo base_url();?>/assets/AdminLTE/bower_components/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="<?php echo base_url();?>/assets/AdminLTE/bower_components/Ionicons/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo base_url();?>/assets/AdminLTE/dist/css/AdminLTE.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="<?php echo base_url();?>/assets/AdminLTE/plugins/iCheck/square/blue.css">
+   <link rel="stylesheet" href="<?php echo base_url();?>/assets/AdminLTE/bower_components/bootstrap-validator/vendor/bootstrap/css/bootstrap.css"/>
+   <link rel="stylesheet" href="<?php echo base_url();?>/assets/AdminLTE/bower_components/bootstrap-validator/dist/css/bootstrapValidator.css"/>
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+    <script type="text/javascript" src="<?php echo base_url();?>/assets/AdminLTE/bower_components/bootstrap-validator/vendor/jquery/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>/assets/AdminLTE/bower_components/bootstrap-validator/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>/assets/AdminLTE/bower_components/bootstrap-validator/dist/js/bootstrapValidator.js"></script>
+</head>
 
-  <!-- Google Font -->
+ <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-logo">
-    <a href="<?php echo base_url();?>"><b>Admin</b>LTE</a>
-  </div>
-  <!-- /.login-logo -->
-  <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="../../index2.html" method="post">
-      <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
-      <div class="row">
-        <div class="col-xs-8">
-          <div class="checkbox icheck">
-            <label>
-              <input type="checkbox"> Remember Me
-            </label>
-          </div>
-        </div>
-        <!-- /.col -->
-        <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-        </div>
-        <!-- /.col -->
-      </div>
-    </form>
+<body>
+<div class="container">
+        <div class="row">
+			<div class="col-sm-1 col-md-2 col-lg-3 "></div>
+            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 ">
+			  <div class="page-header" align="center">
+					<img src="<?php echo base_url();?>/assets/AdminLTE/dist/img/logo_vec.gif" width="30%">
+					  <h4>ระบบจัดการข้อมูลบุคลากรอาชีวศึกษา</h4>
+					  <h5>System of Vocational Personnel Management</h5>
+			  </div>
 
-    <div class="social-auth-links text-center">
-      <p>- OR -</p>
-      <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
-        Facebook</a>
-      <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
-        Google+</a>
+                <form id="defaultForm" method="post" class="form-horizontal" action="target.php">
+                    <div class="form-group">
+                        <label class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label">ชื่อบัญชีผู้ใช้</label>
+                         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9  input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input type="text" class="form-control" name="username" placeholder="ชื่อบัญชีผู้ใช้" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                       <label class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label">รหัสผ่าน</label>
+                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 input-group">
+							    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="text" class="form-control" name="userpass" placeholder="รหัสผ่าน" />		
+                            </div>
+                    </div>
+
+					  <div class="form-group">
+					    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" align="center"></div>
+
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" align="center">
+									<button type="submit" class="btn  btn-lg btn-primary btn-block">เข้าสู่ระบบ</button>
+                        </div>
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" align="center"></div>
+                    </div>
+                </form>
+            </div>
+			<div class="col-sm-1 col-md-2 col-lg-3 "></div>
+	    </div>
+
+		<div class="row">		
+			<div class="col-sm-1 col-md-2 col-lg-3 "></div>
+            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 ">
+					 <div class="page-header" align="center"></div>
+			 </div>
+			<div class="col-sm-1 col-md-2 col-lg-3 "></div>
+		</div>
+
+		<div class="row">		
+			<div class="col-sm-1 col-md-2 col-lg-3 "></div>
+			 <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6" align="center">
+								<h4  >พัฒนาโดย สำนักอำนวยการ</h4> 
+								<h5 >สำนักงานคณะกรรมการการอาชีวศึกษา กระทรวงศึกษาธิการ</h5>
+			 </div>
+			<div class="col-sm-1 col-md-2 col-lg-3 "></div>
+		</div>
+      </div>
     </div>
-    <!-- /.social-auth-links -->
 
-    <a href="#">I forgot my password</a><br>
-    <a href="register.html" class="text-center">Register a new membership</a>
 
-  </div>
-  <!-- /.login-box-body -->
-</div>
-<!-- /.login-box -->
-
-<!-- jQuery 3 -->
-<script src="<?php echo base_url();?>/assets/AdminLTE/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="<?php echo base_url();?>/assets/AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- iCheck -->
-<script src="<?php echo base_url();?>/assets/AdminLTE/plugins/iCheck/icheck.min.js"></script>
-<script>
-  $(function () {
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass: 'iradio_square-blue',
-      increaseArea: '20%' // optional
-    });
-  });
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#defaultForm')
+        .bootstrapValidator({
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                username: {
+                    validators: {
+                        notEmpty: {
+                            message: 'กรุณากรอกชื่อบัญชีผู้ใช้'
+                        }
+                    }
+                },
+                userpass: {
+                    validators: {
+                        notEmpty: {
+                            message: 'กรุณากรอกรหัสผ่าน'
+                        }
+                    }
+                },
+            }
+        })
+ 
+});
 </script>
 </body>
 </html>
