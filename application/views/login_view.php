@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Log in</title>
+  <title><?php echo $title ;?></title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
    <link rel="stylesheet" href="<?php echo base_url();?>/assets/AdminLTE/bower_components/bootstrap-validator/vendor/bootstrap/css/bootstrap.css"/>
@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 <form id="defaultForm"  class="form-horizontal">
                     <div class="form-group">
-                        <label class="col-xs-3 col-sm-4 col-md-4 col-lg-4 control-label">ชื่อบัญชีผู้ใช้</label>
+                        <label class="col-xs-1 col-sm-2 col-md-2 col-lg-2 control-label"></label>
                          <div class="col-xs-9 col-sm-8 col-md-8 col-lg-8  input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                             <input type="text" class="form-control" id="username" name="username" placeholder="ชื่อบัญชีผู้ใช้" />
@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
 
                     <div class="form-group">
-                       <label class="col-xs-3 col-sm-4 col-md-4 col-lg-4 control-label">รหัสผ่าน</label>
+                        <label class="col-xs-1 col-sm-2 col-md-2 col-lg-2 control-label"></label>
                         <div class="col-xs-9 col-sm-8 col-md-8 col-lg-8 input-group">
 							    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                             <input type="password" class="form-control" id="userpass" name="userpass" placeholder="รหัสผ่าน" />
@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
 
 					  <div class="form-group">
-					    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" align="center"></div>
+					    <div class="col-xs-1 col-sm-2 col-md-2 col-lg-2" align="center"></div>
               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" align="center">
 				          <button type="submit" class="btn  btn-primary btn-block">เข้าสู่ระบบ</button>
               </div>
@@ -138,7 +138,7 @@ $(document).ready(function() {
 
           success:function(data){
             if(data=='pass'){
-              window.location.href='<?php echo base_url(); ?>main/init_session';
+              window.location.href='<?php echo base_url(); ?>main/admin';
             }else if(data=='fail'){
               document.getElementById('msg').style.display = 'block';
               document.getElementById("showmsg").innerHTML = "มีบางอย่างผิดพลาด Username หรือ รหัสผ่านของคุณอาจไม่ถูกต้อง";

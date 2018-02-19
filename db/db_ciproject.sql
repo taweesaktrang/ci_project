@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 16, 2018 at 11:16 AM
+-- Generation Time: Feb 19, 2018 at 04:51 PM
 -- Server version: 10.1.30-MariaDB
--- PHP Version: 5.6.33
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -80,7 +80,35 @@ INSERT INTO `tbl_member` (`member_id`, `member_name`, `member_dep`, `salary`) VA
 ('2222222332', '้้สสสสสสสส', 'ฟฟฟฟ', '500'),
 ('88888888888', 'aaaa', '5555', '55555'),
 ('99999999999', 'สสสสสสส', 'llll', '80000'),
-('6666666666', 'aaaaa', 'sss', 'aaaa');
+('6666666666', 'aaaaa', 'sss', 'aaaa'),
+('1111111111111', 'assasa', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_person`
+--
+
+CREATE TABLE `tbl_person` (
+  `p_cardid` varchar(13) NOT NULL,
+  `p_prefix` varchar(15) NOT NULL,
+  `p_name` varchar(50) NOT NULL,
+  `p_surname` varchar(50) NOT NULL,
+  `p_birthdate` date NOT NULL,
+  `p_blood` varchar(5) NOT NULL,
+  `p_appointdate` date NOT NULL,
+  `p_retiredate` date NOT NULL,
+  `p_loginname` varchar(15) NOT NULL,
+  `p_password` varchar(255) NOT NULL,
+  `p_status` varchar(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_person`
+--
+
+INSERT INTO `tbl_person` (`p_cardid`, `p_prefix`, `p_name`, `p_surname`, `p_birthdate`, `p_blood`, `p_appointdate`, `p_retiredate`, `p_loginname`, `p_password`, `p_status`) VALUES
+('3920600658763', 'นาย', 'ทวีศักดิ์', 'ศิลวิศาล', '1975-06-14', 'ฺB', '2008-06-20', '2035-09-30', '3920600658763', '52dbdeaeff76219d5f472f6cf6e98e36', '1');
 
 --
 -- Indexes for dumped tables
@@ -97,6 +125,13 @@ ALTER TABLE `books`
 --
 ALTER TABLE `tbl_member`
   ADD PRIMARY KEY (`member_id`);
+
+--
+-- Indexes for table `tbl_person`
+--
+ALTER TABLE `tbl_person`
+  ADD PRIMARY KEY (`p_cardid`),
+  ADD KEY `p_cardid` (`p_cardid`);
 
 --
 -- AUTO_INCREMENT for dumped tables

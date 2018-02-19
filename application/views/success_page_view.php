@@ -21,8 +21,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="col-sm-1 col-md-2 col-lg-3 "></div>
 				<div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 ">
 						<div class="page-header" align="center">
-								<div id="msg" class="alert alert-danger alert-dismissible" role="alert">
-					       				<span id="showmsg"><?php echo $error_msg;?></span>
+								<div id="msg" class="alert alert-success" role="alert">
+					       				<span id="showmsg"><?php echo $success_msg;?></span>
         						</div>
 						</div>
 				</div>
